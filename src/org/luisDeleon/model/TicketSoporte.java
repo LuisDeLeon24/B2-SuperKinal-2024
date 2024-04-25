@@ -88,6 +88,4 @@ public class TicketSoporte {
     public String toString() {
         return "TicketSoporte{" + "ticketSoporteId=" + ticketSoporteId + ", descripcionTicket=" + descripcionTicket + ", estatus=" + estatus + ", cliente=" + cliente + ", clienteId=" + clienteId + ", facturaId=" + facturaId + '}';
     }
-    
-    
 }
