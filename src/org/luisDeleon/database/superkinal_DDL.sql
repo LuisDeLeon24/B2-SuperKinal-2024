@@ -1,3 +1,5 @@
+-- drop database if exists superKinal;
+
 create database if not exists superKinal;
 
 use superKinal;
@@ -58,14 +60,6 @@ create table Compras(
     primary key PK_compraId(compraId)
 );
  
-create table TicketSoporte(
-	ticketSoporteId int not null auto_increment,
-    descripcionTicket varchar(250) not null,
-    estatus varchar(30) not null,
-    clienteId int(11) not null,
-    primary key PK_ticketSoporteId(ticketSoporteId),
-    constraint FK_TicketSoporte_Clientes foreign key (clienteId) references Clientes(clienteId)
-);
  
 create table Facturas(
 	facturaId int not null auto_increment,
@@ -77,6 +71,16 @@ create table Facturas(
     primary key PK_facturaId(facturaId),
     constraint FK_Facturas_Clientes foreign key (clienteId) references Clientes(clienteId),
     constraint FK_Facturas_Empleados foreign key (empleadoId) references Empleados(empleadoId)
+);
+
+create table TicketSoporte(
+	ticketSoporteId int not null auto_increment,
+    descripcionTicket varchar(250) not null,
+    estatus varchar(30) not null,
+    clienteId int(11) not null,
+    facturaId int(11),
+    primary key PK_ticketSoporteId(ticketSoporteId),
+    constraint FK_TicketSoporte_Clientes foreign key (clienteId) references Clientes(clienteId)
 );
  
 create table Productos(
