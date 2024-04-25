@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="320.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.luisDeleon.controller.FormularioController">
+   <children>
+      <ImageView fitHeight="500.0" fitWidth="320.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/formulario.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="tfClienteID" editable="false" layoutX="33.0" layoutY="62.0" prefHeight="38.0" prefWidth="262.0" promptText="ID del cliente" />
+      <TextField fx:id="tfNombre" layoutX="33.0" layoutY="131.0" prefHeight="38.0" prefWidth="262.0" promptText="Nombre del cliente" />
+      <TextField fx:id="tfApellido" layoutX="29.0" layoutY="204.0" prefHeight="38.0" prefWidth="262.0" promptText="Apellido de cliente" />
+      <TextField fx:id="tfTelefono" layoutX="29.0" layoutY="277.0" prefHeight="38.0" prefWidth="262.0" promptText="Telefono del cliente" />
+      <TextField fx:id="tfDireccion" layoutX="29.0" layoutY="342.0" prefHeight="38.0" prefWidth="262.0" promptText="Dirección del cliente" />
+      <TextField fx:id="tfNIT" layoutX="29.0" layoutY="409.0" prefHeight="38.0" prefWidth="262.0" promptText="NIT del cliente" />
+      <Button fx:id="btnCancelar" layoutX="29.0" layoutY="461.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="25.0" prefWidth="127.0" style="-fx-background-color: #E1D2A9;" text="Cancelar" />
+      <Button fx:id="btnGuardar" layoutX="171.0" layoutY="461.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="25.0" prefWidth="127.0" style="-fx-background-color: #E1D2A9;" text="Guardar" />
+   </children>
+</AnchorPane>
