@@ -448,7 +448,7 @@ DELIMITER $$
         end $$
 DELIMITER ;
  
-call  sp_AgregarEmpleado('1', '2', 2.5, '10:10:10', '10:10:10', 1);
+-- call  sp_AgregarEmpleado('1', '2', 2.5, '10:10:10', '10:10:10', 1);
  
 DELIMITER $$
 create procedure sp_ListarEmpleados()
@@ -511,10 +511,10 @@ call sp_AsignarEncargado(1,1);
 -- ticketSoporte
  
 DELIMITER $$
-	create procedure sp_AgregarTicketSoporte(des varchar(250), cliId int)
+	create procedure sp_AgregarTicketSoporte(des varchar(250), cliId int, factId int)
 		begin
-			insert into TicketSoporte (descripcionTicket, estatus, clienteId) values 
-				(des, 'Recién Creado', cliId);
+			insert into TicketSoporte (descripcionTicket, estatus, clienteId,facturaId,facturaId) values 
+				(des, 'Recién Creado', cliId,factId);
         end $$
 DELIMITER ;
  

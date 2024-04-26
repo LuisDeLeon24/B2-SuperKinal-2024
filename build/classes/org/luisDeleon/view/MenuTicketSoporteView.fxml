@@ -36,14 +36,19 @@
       <ComboBox fx:id="cmbClientes" layoutX="361.0" layoutY="206.0" prefHeight="47.0" prefWidth="215.0" />
       <ComboBox fx:id="cmbFactura" layoutX="600.0" layoutY="206.0" prefHeight="47.0" prefWidth="215.0" />
       <ComboBox fx:id="cmbEstatus" layoutX="890.0" layoutY="586.0" prefHeight="47.0" prefWidth="215.0" />
-      <Button fx:id="btnRegresar" layoutX="890.0" layoutY="687.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="66.0" prefWidth="126.0" text="Regresar">
+      <Button fx:id="btnRegresar" layoutX="881.0" layoutY="679.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="66.0" prefWidth="90.0" text="Regresar">
          <font>
-            <Font size="20.0" />
+            <Font size="15.0" />
          </font>
       </Button>
-      <Button fx:id="btnGuardar" layoutX="1042.0" layoutY="687.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="66.0" prefWidth="126.0" text="Guardar">
+      <Button fx:id="btnVaciar" layoutX="980.0" layoutY="679.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="66.0" prefWidth="90.0" text="Vaciar">
          <font>
-            <Font size="20.0" />
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnGuardar" layoutX="1085.0" layoutY="679.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="66.0" prefWidth="90.0" text="Guardar">
+         <font>
+            <Font size="15.0" />
          </font>
       </Button>
    </children>
