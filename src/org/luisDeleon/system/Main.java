@@ -16,6 +16,7 @@ import javafx.stage.Stage;
 import org.luisDeleon.controller.FormularioController;
 import org.luisDeleon.controller.MenuClientesController;
 import org.luisDeleon.controller.MenuPrincipalController;
+import org.luisDeleon.controller.MenuTicketSoporteController;
 
 /**
  *
@@ -85,4 +86,13 @@ public class Main extends Application {
         }
     }
     
+    public void MenuTicketSoporte(){
+        try{
+            MenuTicketSoporteController MenuTicketSoporteView = (MenuTicketSoporteController)switchScene("MenuTicketSoporteView.fxml",1200,800);
+            MenuTicketSoporteView.setStage(this);
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+            e.printStackTrace();
+        }
+    }
 }
