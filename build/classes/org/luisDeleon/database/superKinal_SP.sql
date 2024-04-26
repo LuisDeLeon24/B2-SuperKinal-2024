@@ -146,10 +146,12 @@ DELIMITER ;
 DELIMITER $$
 	create procedure sp_agregarCargo(nomCar varchar(30),desCar varchar(100))
     begin
-		insert into Clientes(nombreCargo,descripcionCargo) values
+		insert into Cargos(nombreCargo,descripcionCargo) values
 			(nomCa, desCar);
     end $$
 DELIMITER ;
+
+call sp_agregarCargo('Cajero','Atender en la caja');
  
 -- listar
 delimiter $$
@@ -513,7 +515,7 @@ call sp_AsignarEncargado(1,1);
 DELIMITER $$
 	create procedure sp_AgregarTicketSoporte(des varchar(250), cliId int, factId int)
 		begin
-			insert into TicketSoporte (descripcionTicket, estatus, clienteId,facturaId,facturaId) values 
+			insert into TicketSoporte (descripcionTicket, estatus, clienteId,facturaId) values 
 				(des, 'Recién Creado', cliId,factId);
         end $$
 DELIMITER ;
@@ -564,3 +566,4 @@ DELIMITER ;
  
 call sp_BuscarTicketSoporte(1);
 
+call sp_AgregarFactura();

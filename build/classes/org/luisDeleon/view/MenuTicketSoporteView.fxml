@@ -23,7 +23,7 @@
           <TableColumn fx:id="colTicketId" prefWidth="75.0" text="TicketId" />
           <TableColumn fx:id="colDescripcion" prefWidth="314.40003967285156" text="Descripcion" />
             <TableColumn fx:id="colEstatus" minWidth="0.0" prefWidth="185.5999755859375" text="Estatus" />
-            <TableColumn fx:id="colCLienteId" prefWidth="126.39996337890625" text="ClienteId" />
+            <TableColumn fx:id="colClienteId" prefWidth="126.39996337890625" text="ClienteId" />
             <TableColumn fx:id="colFactura" prefWidth="112.800048828125" text="FacturaId" />
         </columns>
       </TableView>

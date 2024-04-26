@@ -45,7 +45,7 @@ public class MenuTicketSoporteController implements Initializable {
     ComboBox cmbEstatus,cmbClientes;
     
      @FXML
-     TableColumn colTicketId,colDescripcion,colEstatus,colCliente,colFacturaId;
+     TableColumn colTicketId,colDescripcion,colEstatus,colClienteId,colFacturaId;
     
     @FXML
     Button btnRegresar, btnGuardar,btnVaciar;
@@ -88,7 +88,7 @@ public class MenuTicketSoporteController implements Initializable {
         colTicketId.setCellValueFactory(new PropertyValueFactory<TicketSoporte, Integer>("ticketSoporteId"));
         colDescripcion.setCellValueFactory(new PropertyValueFactory<TicketSoporte, String>("descripcionTicket"));
         colEstatus.setCellValueFactory(new PropertyValueFactory<TicketSoporte, String>("estatus"));
-        colCliente.setCellValueFactory(new PropertyValueFactory<TicketSoporte, String>("cliente"));
+        colClienteId.setCellValueFactory(new PropertyValueFactory<TicketSoporte, String>("clienteId"));
         colFacturaId.setCellValueFactory(new PropertyValueFactory<TicketSoporte, String>("facturaId"));
         tblTickets.getSortOrder().add(colTicketId);
     }
@@ -98,7 +98,7 @@ public class MenuTicketSoporteController implements Initializable {
         for(int i = 0; i >= cmbClientes.getItems().size() ; i++){
             String clienteCmb = cmbClientes.getItems().get(i).toString();
             String clienteTbl = ((TicketSoporte)tblTickets.getSelectionModel().getSelectedItem()).getCliente();
-            if(clienteCmb.equals(clienteTbl)){
+            if(cmbClientes.equals(clienteTbl)){
                 index = i;
                 break;
             }

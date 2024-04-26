@@ -73,6 +73,10 @@ create table Facturas(
     constraint FK_Facturas_Empleados foreign key (empleadoId) references Empleados(empleadoId)
 );
 
+INSERT INTO Facturas (fecha, hora, clienteId, empleadoId,total)
+VALUES ('2024-04-26', '12:30:00', 1, 1);
+
+
 create table TicketSoporte(
 	ticketSoporteId int not null auto_increment,
     descripcionTicket varchar(250) not null,
