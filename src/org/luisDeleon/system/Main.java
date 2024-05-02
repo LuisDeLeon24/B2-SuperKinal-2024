@@ -15,6 +15,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import org.luisDeleon.controller.FormularioController;
 import org.luisDeleon.controller.MenuClientesController;
+import org.luisDeleon.controller.MenuComprasController;
 import org.luisDeleon.controller.MenuPrincipalController;
 import org.luisDeleon.controller.MenuTicketSoporteController;
 
@@ -90,6 +91,16 @@ public class Main extends Application {
         try{
             MenuTicketSoporteController MenuTicketSoporteView = (MenuTicketSoporteController)switchScene("MenuTicketSoporteView.fxml",1200,800);
             MenuTicketSoporteView.setStage(this);
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+            e.printStackTrace();
+        }
+    }
+    
+    public void MenuCompras(){
+        try{
+            MenuComprasController menuComprasView = (MenuComprasController)switchScene("MenuComprasView.fxml",1017,700);
+            menuComprasView.setStage(this);
         }catch(Exception e){
             System.out.println(e.getMessage());
             e.printStackTrace();
