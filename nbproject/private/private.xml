@@ -3,13 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Luis%20De%20León/Documents/Repositorios/B2-SuperKinal-2024/src/org/luisDeleon/controller/MenuClientesController.java</file>
-            <file>file:/C:/Users/Luis%20De%20León/Documents/Repositorios/B2-SuperKinal-2024/src/org/luisDeleon/controller/MenuTicketSoporteController.java</file>
-            <file>file:/C:/Users/Luis%20De%20León/Documents/Repositorios/B2-SuperKinal-2024/src/org/luisDeleon/controller/MenuPrincipalController.java</file>
-            <file>file:/C:/Users/Luis%20De%20León/Documents/Repositorios/B2-SuperKinal-2024/src/org/luisDeleon/resources/Paleta%20de%20colores.jpeg</file>
-            <file>file:/C:/Users/Luis%20De%20León/Documents/Repositorios/B2-SuperKinal-2024/src/org/luisDeleon/dao/Conexion.java</file>
-            <file>file:/C:/Users/Luis%20De%20León/Documents/Repositorios/B2-SuperKinal-2024/src/org/luisDeleon/controller/FormularioController.java</file>
-            <file>file:/C:/Users/Luis%20De%20León/Documents/Repositorios/B2-SuperKinal-2024/src/org/luisDeleon/system/Main.java</file>
+            <file>file:/C:/Users/Informatica/Desktop/Repositorios%20GITHUB/B2-SuperKinal-2024/src/org/luisDeleon/database/superkinal_DDL.sql</file>
+            <file>file:/C:/Users/Informatica/Desktop/Repositorios%20GITHUB/B2-SuperKinal-2024/src/org/luisDeleon/controller/MenuClientesController.java</file>
+            <file>file:/C:/Users/Informatica/Desktop/Repositorios%20GITHUB/B2-SuperKinal-2024/src/org/luisDeleon/resources/Paleta%20de%20colores.jpeg</file>
+            <file>file:/C:/Users/Informatica/Desktop/Repositorios%20GITHUB/B2-SuperKinal-2024/src/org/luisDeleon/system/Main.java</file>
+            <file>file:/C:/Users/Informatica/Desktop/Repositorios%20GITHUB/B2-SuperKinal-2024/src/org/luisDeleon/controller/MenuComprasController.java</file>
+            <file>file:/C:/Users/Informatica/Desktop/Repositorios%20GITHUB/B2-SuperKinal-2024/src/org/luisDeleon/view/MenuComprasView.fxml</file>
+            <file>file:/C:/Users/Informatica/Desktop/Repositorios%20GITHUB/B2-SuperKinal-2024/src/org/luisDeleon/controller/MenuPrincipalController.java</file>
         </group>
     </open-files>
 </project-private>

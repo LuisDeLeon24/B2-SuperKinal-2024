@@ -13,7 +13,9 @@ import javafx.fxml.JavaFXBuilderFactory;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import org.luisDeleon.controller.FormularioCargosController;
 import org.luisDeleon.controller.FormularioController;
+import org.luisDeleon.controller.MenuCargosController;
 import org.luisDeleon.controller.MenuClientesController;
 import org.luisDeleon.controller.MenuComprasController;
 import org.luisDeleon.controller.MenuPrincipalController;
@@ -101,6 +103,27 @@ public class Main extends Application {
         try{
             MenuComprasController menuComprasView = (MenuComprasController)switchScene("MenuComprasView.fxml",1017,700);
             menuComprasView.setStage(this);
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+            e.printStackTrace();
+        }
+    }
+    
+    public void MenuCargos(){
+        try{
+            MenuCargosController menuCargosView = (MenuCargosController)switchScene("MenuCargosView.fxml",800,700);
+            menuCargosView.setStage(this);
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+            e.printStackTrace();
+        }
+    }
+    
+    public void FormularioCargos(int op){
+        try{
+            FormularioCargosController formularioCargosView = (FormularioCargosController)switchScene("FormularioCargosView.fxml",320,500);
+            formularioCargosView.setOp(op);
+            formularioCargosView.setStage(this);
         }catch(Exception e){
             System.out.println(e.getMessage());
             e.printStackTrace();

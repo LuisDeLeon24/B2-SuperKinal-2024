@@ -32,7 +32,7 @@
             <Font size="25.0" />
          </font>
       </TextField>
-      <TextArea fx:id="taDescripcion" layoutX="916.0" layoutY="316.0" opacity="0.74" prefHeight="200.0" prefWidth="243.0" />
+      <TextArea fx:id="taDescripcion" layoutX="916.0" layoutY="316.0" opacity="0.74" prefHeight="200.0" prefWidth="243.0" wrapText="true" />
       <ComboBox fx:id="cmbClientes" layoutX="361.0" layoutY="206.0" prefHeight="47.0" prefWidth="215.0" />
       <ComboBox fx:id="cmbFactura" layoutX="600.0" layoutY="206.0" prefHeight="47.0" prefWidth="215.0" />
       <ComboBox fx:id="cmbEstatus" layoutX="890.0" layoutY="586.0" prefHeight="47.0" prefWidth="215.0" />
