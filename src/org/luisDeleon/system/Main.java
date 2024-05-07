@@ -18,6 +18,7 @@ import org.luisDeleon.controller.FormularioController;
 import org.luisDeleon.controller.MenuCargosController;
 import org.luisDeleon.controller.MenuClientesController;
 import org.luisDeleon.controller.MenuComprasController;
+import org.luisDeleon.controller.MenuEmpleadosController;
 import org.luisDeleon.controller.MenuPrincipalController;
 import org.luisDeleon.controller.MenuTicketSoporteController;
 
@@ -128,5 +129,15 @@ public class Main extends Application {
             System.out.println(e.getMessage());
             e.printStackTrace();
         }
+    }
+    
+    public void MenuEmpleados(){
+       try{
+            MenuEmpleadosController menuEmpleadosView = (MenuEmpleadosController)switchScene("MenuEmpleadosView.fxml",1200,800);
+            menuEmpleadosView.setStage(this);
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+            e.printStackTrace();
+        } 
     }
 }
