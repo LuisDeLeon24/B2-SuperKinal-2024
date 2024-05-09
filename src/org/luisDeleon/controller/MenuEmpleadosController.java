@@ -7,9 +7,11 @@ package org.luisDeleon.controller;
 
 import java.net.URL;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Time;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
@@ -23,6 +25,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import org.luisDeleon.dao.Conexion;
+import org.luisDeleon.model.Cargo;
 import org.luisDeleon.model.Empleado;
 import org.luisDeleon.system.Main;
 
@@ -47,7 +50,7 @@ public class MenuEmpleadosController implements Initializable {
     TableView tblEmpleados;
     
     @FXML
-    TableColumn colEmpleadoId,colNombre,colSueldo,colEntrada,colSalida;
+    TableColumn colEmpleadoId,colNombre,colApellido,colSueldo,colEntrada,colSalida,colCargo,colEncargado;
     
     @FXML
     ComboBox cmbCargo,cmbEncargado;
@@ -61,6 +64,7 @@ public class MenuEmpleadosController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        cargarDatos();
     } 
     
     public void vaciarCampos(){
@@ -74,37 +78,41 @@ public class MenuEmpleadosController implements Initializable {
         cmbEncargado.getSelectionModel().clearSelection();
     }
     
-    //public void cargarDatos(){
-        //tblEmpleados.setItems(listarEmpleados());
-        //colEmpleadoId.setCellValueFactory(new PropertyValueFactory<Empleado, Integer>("ticketSoporteId"));
-        //colNombre.setCellValueFactory(new PropertyValueFactory<Empleado, String>("descripcionTicket"));
-        //colEstatus.setCellValueFactory(new PropertyValueFactory<Empleado, String>("estatus"));
-        //colCliente.setCellValueFactory(new PropertyValueFactory<Empleado, String>("cliente"));
-        //colFacturaId.setCellValueFactory(new PropertyValueFactory<Empleado, String>("facturaId"));
-        //tblTickets.getSortOrder().add(colTicketId);
-    //} 
+    public void cargarDatos(){
+        tblEmpleados.setItems(listarEmpleados());
+        colEmpleadoId.setCellValueFactory(new PropertyValueFactory<Empleado,Integer>("empleadoId"));
+        colNombre.setCellValueFactory(new PropertyValueFactory<Empleado,String>("nombreEmpleado"));
+        colApellido.setCellValueFactory(new PropertyValueFactory<Empleado,String>("apellidoEmpleado"));
+        colSueldo.setCellValueFactory(new PropertyValueFactory<Empleado, Double>("sueldo"));
+        colEntrada.setCellValueFactory(new PropertyValueFactory<Empleado,Time>("horaEntrada"));
+        colSalida.setCellValueFactory(new PropertyValueFactory<Empleado,Time>("horaSalida"));
+        colCargo.setCellValueFactory(new PropertyValueFactory<Empleado,String>("cargo"));
+        colEncargado.setCellValueFactory(new PropertyValueFactory<Empleado,String>("encargadoId"));
+        tblEmpleados.getSortOrder().add(colEmpleadoId);//Ordena los ID's de menor a mayor
+    }  
     
-    public ObservableList<Empleado>listarEmpleados(){
+    
+     public ObservableList<Empleado>listarEmpleados(){
         ArrayList<Empleado> empleados = new ArrayList<>();
-        
         try{
             conexion = Conexion.getInstance().obtenerConexion();
-            String sql = "call sp_ListarEmpleados()";
+            String sql = ("sp_ListarEmpleados()");
             statement = conexion.prepareStatement(sql);
             resultset = statement.executeQuery();
-            
             while(resultset.next()){
                 int empleadoId = resultset.getInt("empleadoId");
-                String nombre = resultset.getString("nombreEmpleado");
-                String apellido = resultset.getString("apellidoEmpleado");
+                String nombreEmpleado = resultset.getString("nombreEmpleado");
+                String apellidoEmpleado = resultset.getString("apellidoEmpleado");
                 double sueldo = resultset.getDouble("sueldo");
-                String horaEntrada = resultset.getString("horaEntrada");
-                String horaSalida = resultset.getString("horaSalida");
+                Time horaEntrada = resultset.getTime("horaEntrada");
+                Time horaSalida = resultset.getTime("horaSalida");
                 int cargoId = resultset.getInt("cargoId");
                 int encargadoId = resultset.getInt("encargadoId");
                 
-                empleados.add(new Empleado(empleadoId,nombre,apellido,sueldo,horaEntrada,horaSalida,cargoId,encargadoId));
+                empleados.add(new Empleado(empleadoId,nombreEmpleado,apellidoEmpleado,sueldo,horaEntrada,horaSalida,cargoId,encargadoId));
+                        
             }
+                    
         }catch(SQLException e){
             System.out.println(e.getMessage());
         }finally{
@@ -112,20 +120,59 @@ public class MenuEmpleadosController implements Initializable {
                 if(resultset != null){
                     resultset.close();
                 }
-                
                 if(statement != null){
                     statement.close();
                 }
-                
                 if(conexion != null){
                     conexion.close();
                 }
             }catch(SQLException e){
                 System.out.println(e.getMessage());
+
             }
         }
-        return FXCollections.observableList(empleados); 
+        
+        return FXCollections.observableList(empleados);
     }
+     
+    public ObservableList<Cargo> listarCargo(){
+        ArrayList<Cargo> cargos = new ArrayList<>();
+        try{
+            conexion = Conexion.getInstance().obtenerConexion();
+            String sql = "call sp_listarCargos()";
+            statement = conexion.prepareStatement(sql);
+            resultset = statement.executeQuery();
+            
+            while(resultset.next()){
+                int cargoId = resultset.getInt("cargoId");
+                String nombreCargo = resultset.getString("nombreCargo");
+                String descripcionCargo = resultset.getString("descripcionCargo");
+                
+                cargos.add(new Cargo(cargoId, nombreCargo, descripcionCargo));
+            }
+            
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }finally{
+            try{
+                if(resultset != null){
+                    resultset.close();
+                }
+                if(statement != null){
+                    statement.close();
+                }
+                if(conexion != null){
+                    conexion.close();
+                }
+            }catch(SQLException e){
+                System.out.println(e.getMessage());
+
+            }
+        }
+        return FXCollections.observableList(cargos);
+    }
+    
+    
 
     public Main getStage() {
         return stage;
