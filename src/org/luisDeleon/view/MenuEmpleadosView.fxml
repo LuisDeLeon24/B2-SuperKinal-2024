@@ -10,8 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="org.luisDeleon.controller.MenuEmpleadosController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.luisDeleon.controller.MenuEmpleadosController">
    <children>
       <ImageView fitHeight="800.0" fitWidth="1200.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -25,13 +24,16 @@
       <TextField fx:id="tfSalida" layoutX="962.0" layoutY="606.0" prefHeight="54.0" prefWidth="204.0" />
       <TableView fx:id="tblEmpleados" layoutX="38.0" layoutY="304.0" prefHeight="459.0" prefWidth="866.0">
         <columns>
-          <TableColumn fx:id="colEmpleadoId" prefWidth="75.0" text="ID" />
-          <TableColumn fx:id="colNombre" prefWidth="111.19998168945312" text="Nombre" />
-            <TableColumn fx:id="colSueldo" minWidth="0.0" prefWidth="83.20002746582031" text="Sueldo" />
-            <TableColumn fx:id="colEntrada" prefWidth="84.0" text="Entrada" />
-            <TableColumn fx:id="colSalida" prefWidth="79.199951171875" text="Salida" />
-            <TableColumn fx:id="colCargo" prefWidth="213.5999755859375" text="Cargo" />
-            <TableColumn fx:id="colEncargado" prefWidth="221.60003662109375" text="Encargado" />
+          <TableColumn fx:id="colEmpleadoId" prefWidth="53.0" text="ID" />
+          <TableColumn fx:id="colNombre" prefWidth="134.0" text="Nombre" />
+            <TableColumn prefWidth="84.0" text="Apellido" />
+            <TableColumn fx:id="colSueldo" minWidth="0.0" prefWidth="75.0" text="Sueldo" />
+            <TableColumn fx:id="colEntrada" prefWidth="93.0" text="Entrada" />
+            <TableColumn fx:id="colSalida" prefWidth="98.0" text="Salida" />
+            <TableColumn fx:id="colCargo" prefWidth="154.0" text="Cargo" />
+            <TableColumn fx:id="colEncargado" prefWidth="175.0" text="Encargado" />
+            <TableColumn prefWidth="155.0" text="Apellido" />
+            <TableColumn fx:id="colApellido" prefWidth="75.0" text="Apellido" />
         </columns>
       </TableView>
       <Button fx:id="btnRegresar" layoutX="920.0" layoutY="678.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="127.0" style="-fx-background-color: #E1D2A9;" text="Regresar">

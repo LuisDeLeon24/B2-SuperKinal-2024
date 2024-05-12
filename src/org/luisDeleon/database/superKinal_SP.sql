@@ -146,10 +146,12 @@ DELIMITER ;
 DELIMITER $$
 	create procedure sp_agregarCargo(nomCar varchar(30),desCar varchar(100))
     begin
-		insert into Clientes(nombreCargo,descripcionCargo) values
-			(nomCa, desCar);
+		insert into Cargos(nombreCargo,descripcionCargo) values
+			(nomCar, desCar);
     end $$
 DELIMITER ;
+
+call sp_agregarCargo('Cajero','Atender en la caja');
  
 -- listar
 delimiter $$
@@ -263,7 +265,7 @@ delimiter $$
 create procedure sp_eliminarCategoriaProducto(catId int)
 	begin
 		delete from CategoriaProductos
-		where categoriaProductoId = catId;
+		where categoriaProductosId = catId;
     end $$
 delimiter ;
  
@@ -351,7 +353,8 @@ insert into Facturas(fecha,hora,clienteId,empleadoId,total)values
 (fech,hor,cliId,empId,tot);
 end $$
 DELIMITER ;
- 
+
+
 -- Listar
 DELIMITER $$
 create procedure sp_ListarFacturas()
@@ -448,17 +451,19 @@ DELIMITER $$
         end $$
 DELIMITER ;
  
--- call  sp_AgregarEmpleado('1', '2', 2.5, '10:10:10', '10:10:10', 1);
+call  sp_AgregarEmpleado('Luis', 'De Leon', 2.5, '10:10:10', '10:10:10', 1);
  
 DELIMITER $$
 create procedure sp_ListarEmpleados()
 	begin 
-		select *
-			from Empleados;
+        select e.empleadoId, e.nombreEmpleado, e.apellidoEmpleado, e.sueldo, e.horaEntrada, e.horaSalida, e.encargadoId,
+        CONCAT('ID: ', e.cargoId, ' | ', 'Cargo: ', c.nombreCargo, ' | ', 'Descripcion: ', c.descripcionCargo) as 'Cargo'
+		from Empleados e
+		join Cargos c ON e.cargoId = c.cargoId;
     end $$
 DELIMITER ;
- 
 call sp_ListarEmpleados();
+
  
 DELIMITER $$
 create procedure sp_EditarEmpleado(empId int, nom varchar(30), ape varchar(30), sue decimal (10,2), horE Time, horS time, carId int)
@@ -513,7 +518,7 @@ call sp_AsignarEncargado(1,1);
 DELIMITER $$
 	create procedure sp_AgregarTicketSoporte(des varchar(250), cliId int, factId int)
 		begin
-			insert into TicketSoporte (descripcionTicket, estatus, clienteId,facturaId,facturaId) values 
+			insert into TicketSoporte (descripcionTicket, estatus, clienteId,facturaId) values 
 				(des, 'Recién Creado', cliId,factId);
         end $$
 DELIMITER ;
@@ -562,5 +567,12 @@ create procedure sp_BuscarTicketSoporte(ticId int)
     end $$
 DELIMITER ;
  
-call sp_BuscarTicketSoporte(1);
-
+DELIMITER $$
+create procedure sp_verificarPromocion()
+	begin
+		select *
+			from TicketSoporte
+            where ticId = ticketSoporteId;
+    end $$
+DELIMITER ;
+ 

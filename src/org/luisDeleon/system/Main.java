@@ -13,9 +13,11 @@ import javafx.fxml.JavaFXBuilderFactory;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import org.luisDeleon.controller.FormCategoriaProductosController;
 import org.luisDeleon.controller.FormularioCargosController;
 import org.luisDeleon.controller.FormularioController;
 import org.luisDeleon.controller.MenuCargosController;
+import org.luisDeleon.controller.MenuCategoriaProductosController;
 import org.luisDeleon.controller.MenuClientesController;
 import org.luisDeleon.controller.MenuComprasController;
 import org.luisDeleon.controller.MenuEmpleadosController;
@@ -139,5 +141,24 @@ public class Main extends Application {
             System.out.println(e.getMessage());
             e.printStackTrace();
         } 
+    }
+    
+    public void menuCategoriaProductosView(){
+        try{
+            MenuCategoriaProductosController menuCategoriaProductoView = (MenuCategoriaProductosController)switchScene("MenuCategoriaProductosView.fxml", 1200, 750);
+            menuCategoriaProductoView.setStage(this);
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
+    
+    public void formCategoriaProuctosView(int op){
+        try{
+            FormCategoriaProductosController formCategoriaProductosView = (FormCategoriaProductosController)switchScene("FormCategoriaProductosView.fxml", 500, 600);
+            formCategoriaProductosView.setOp(op);
+            formCategoriaProductosView.setStage(this);
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }
     }
 }
