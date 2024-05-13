@@ -7,7 +7,7 @@ package org.luisDeleon.model;
 
 /**
  *
- * @author informatica
+ * @author Luis De León
  */
 public class Distribuidor {
     private int distribuidorId;
@@ -27,14 +27,6 @@ public class Distribuidor {
         this.nitDistribuidor = nitDistribuidor;
         this.telefonoDistribuidor = telefonoDistribuidor;
         this.web = web;
-    }
-
-    public Distribuidor(int distribuidorId, String nombreDistribuidor, String direccionDistribuidor, String nitDistribuidor, String telefonoDistribuidor) {
-        this.distribuidorId = distribuidorId;
-        this.nombreDistribuidor = nombreDistribuidor;
-        this.direccionDistribuidor = direccionDistribuidor;
-        this.nitDistribuidor = nitDistribuidor;
-        this.telefonoDistribuidor = telefonoDistribuidor;
     }
 
     public int getDistribuidorId() {
@@ -89,6 +81,7 @@ public class Distribuidor {
     public String toString() {
         return "Distribuidor{" + "distribuidorId=" + distribuidorId + ", nombreDistribuidor=" + nombreDistribuidor + ", direccionDistribuidor=" + direccionDistribuidor + ", nitDistribuidor=" + nitDistribuidor + ", telefonoDistribuidor=" + telefonoDistribuidor + ", web=" + web + '}';
     }
+    
     
     
 }

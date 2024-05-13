@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.luisDeleon.controller.FormCategoriaProductosController">
+   <children>
+      <ImageView fitHeight="600.0" fitWidth="500.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/Categoria%20Productos%20(Fomr).png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="tfCategoriaProductoId" editable="false" layoutX="118.0" layoutY="206.0" prefHeight="35.0" prefWidth="263.0" promptText="ID" />
+      <TextField fx:id="tfNombreCategoria" layoutX="118.0" layoutY="300.0" onAction="#handleButtonAction" prefHeight="35.0" prefWidth="263.0" promptText="Nombre de Categoria" />
+      <TextField fx:id="tfDescripcionCategoria" layoutX="118.0" layoutY="404.0" onAction="#handleButtonAction" prefHeight="35.0" prefWidth="263.0" promptText="Descripcion de Categoria" />
+      <Button fx:id="btnCancelar" layoutX="104.0" layoutY="500.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="50.0" prefWidth="120.0" style="-fx-background-color: #E1D2A9 #E1D2A9;" text="Cancelar" />
+      <Button fx:id="btnGuardar" layoutX="272.0" layoutY="497.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="50.0" prefWidth="120.0" style="-fx-background-color: #E1D2A9 #E1D2A9;" text="Guardar" />
+   </children>
+</AnchorPane>

@@ -21,7 +21,7 @@ public class MenuPrincipalController implements Initializable {
     private Main stage;
     
     @FXML
-    MenuItem btnMenuClientes, btnTicketSoporte, btnCompras,btnCargos,btnEmpleados;
+    MenuItem btnMenuClientes, btnTicketSoporte, btnCompras,btnCargos,btnEmpleados,btnCP,btnDistribuidores,btnProductos,btnPromociones;
     
     @Override
     public void initialize(URL location,ResourceBundle resources){
@@ -47,6 +47,15 @@ public class MenuPrincipalController implements Initializable {
             stage.MenuCargos();
         }else if(event.getSource() == btnEmpleados){
             stage.MenuEmpleados();
+        }else if(event.getSource() == btnCP){
+            stage.menuCategoriaProductosView();
+        }else if(event.getSource() == btnDistribuidores){
+            stage.menuDistribuidorView();
+        }else if(event.getSource() == btnProductos){
+            stage.menuProductoView();
+        }else if(event.getSource() == btnPromociones){
+            stage.menuPromocionView();
         }
+        
     }
 }

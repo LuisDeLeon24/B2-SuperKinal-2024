@@ -11,25 +11,25 @@ package org.luisDeleon.model;
  * @author informatica
  */
 public class CategoriaProducto {
-    private int categoriaProductoId;
+    private int categoriaProductosId;
     private String nombreCategoria;
     private String descripcionCategoria;
 
     public CategoriaProducto() {
     }
 
-    public CategoriaProducto(int categoriaProductoId, String nombreCategoria, String descripcionCategoria) {
-        this.categoriaProductoId = categoriaProductoId;
+    public CategoriaProducto(int categoriaProductosId, String nombreCategoria, String descripcionCategoria) {
+        this.categoriaProductosId = categoriaProductosId;
         this.nombreCategoria = nombreCategoria;
         this.descripcionCategoria = descripcionCategoria;
     }
 
-    public int getCategoriaProductoId() {
-        return categoriaProductoId;
+    public int getCategoriaProductosId() {
+        return categoriaProductosId;
     }
 
-    public void setCategoriaProductoId(int categoriaProductoId) {
-        this.categoriaProductoId = categoriaProductoId;
+    public void setCategoriaProductosId(int categoriaProductosId) {
+        this.categoriaProductosId = categoriaProductosId;
     }
 
     public String getNombreCategoria() {
@@ -44,14 +44,13 @@ public class CategoriaProducto {
         return descripcionCategoria;
     }
 
-    public void setDescripcionCategoria(String descripcionCategoria) {
+    public void setDecripcionCategoria(String descripcionCategoria) {
         this.descripcionCategoria = descripcionCategoria;
     }
 
     @Override
     public String toString() {
-        return "CategoriaProducto{" + "categoriaProductoId=" + categoriaProductoId + ", nombreCategoria=" + nombreCategoria + ", descripcionCategoria=" + descripcionCategoria + '}';
+        return "CategoriaProducto{" + "categoriaProductosId=" + categoriaProductosId + ", nombreCategoria=" + nombreCategoria + ", descripcionCategoria=" + descripcionCategoria + '}';
     }
-    
     
 }

@@ -567,10 +567,12 @@ create procedure sp_BuscarTicketSoporte(ticId int)
     end $$
 DELIMITER ;
  
+DELIMITER $$
+create procedure sp_verificarPromocion()
+	begin
+		select *
+			from TicketSoporte
+            where ticId = ticketSoporteId;
+    end $$
+DELIMITER ;
  
-call sp_BuscarTicketSoporte(1);
-
-call sp_AgregarFactura();
-
-select * from facturas;
-select *from Cargos;
