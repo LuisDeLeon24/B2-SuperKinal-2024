@@ -2,6 +2,12 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/Informatica/Desktop/Repositorios%20GITHUB/B2-SuperKinal-2024/src/org/luisDeleon/dao/Conexion.java</file>
+            <file>file:/C:/Users/Informatica/Desktop/Repositorios%20GITHUB/B2-SuperKinal-2024/src/org/luisDeleon/system/Main.java</file>
+            <file>file:/C:/Users/Informatica/Desktop/Repositorios%20GITHUB/B2-SuperKinal-2024/src/org/luisDeleon/controller/LoginController.java</file>
+            <file>file:/C:/Users/Informatica/Desktop/Repositorios%20GITHUB/B2-SuperKinal-2024/src/org/luisDeleon/view/LoginView.fxml</file>
+            <file>file:/C:/Users/Informatica/Desktop/Repositorios%20GITHUB/B2-SuperKinal-2024/src/org/luisDeleon/controller/MenuPromocionesController.java</file>
+        </group>
     </open-files>
 </project-private>
