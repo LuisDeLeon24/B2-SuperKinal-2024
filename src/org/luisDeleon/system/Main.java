@@ -18,6 +18,7 @@ import org.luisDeleon.controller.FormDistribuidoresController;
 import org.luisDeleon.controller.FormProductosController;
 import org.luisDeleon.controller.FormularioCargosController;
 import org.luisDeleon.controller.FormularioController;
+import org.luisDeleon.controller.LoginController;
 import org.luisDeleon.controller.MenuCargosController;
 import org.luisDeleon.controller.MenuCategoriaProductosController;
 import org.luisDeleon.controller.MenuClientesController;
@@ -213,6 +214,16 @@ public class Main extends Application {
         try{
             MenuPromocionesController menuPromocionesView = (MenuPromocionesController)switchScene("MenuPromocionesView.fxml" , 1000, 600);
             menuPromocionesView.setStage(this);
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+            e.printStackTrace();
+        }
+    }
+    
+    public void loginView(){
+        try{
+            LoginController loginView = (LoginController)switchScene("LoginView.fxml" , 500, 600);
+            loginView.setStage(this);
         }catch(Exception e){
             System.out.println(e.getMessage());
             e.printStackTrace();
