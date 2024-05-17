@@ -513,37 +513,38 @@ call sp_AsignarEncargado(1,1);
 -- ticketSoporte
  
 DELIMITER $$
-	create procedure sp_AgregarTicketSoporte(des varchar(250), cliId int, factId int)
+	create procedure sp_AgregarTicketSoporte(des varchar(250), cliId int, facId int)
 		begin
-			insert into TicketSoporte (descripcionTicket, estatus, clienteId,facturaId) values 
-				(des, 'Recién Creado', cliId,factId);
+			insert into TicketSoporte (descripcionTicket, estatus, clienteId, facturaId) values 
+				(des, 'Recién Creado', cliId, facId);
         end $$
 DELIMITER ;
+call sp_AgregarTicketSoporte('error',1,1);
  
 DELIMITER $$
 create procedure sp_ListarTicketSoporte()
 	begin 
-		select TS.ticketSoporteId, TS.descripcionTicket, TS.estatus,
-				CONCAT('id: ',C.clienteId,' | ', C.nombre, C.apellido) AS 'cliente',
+		select TS.ticketSoporteId, TS.descripcionTicket, TS.estatus, 
+				Concat(C.clienteId, C.nombre, C.apellido) AS 'Clientes', 
                 TS.facturaId from TicketSoporte TS
         join Clientes C on TS.clienteId = C.clienteId;
+
     end $$
 DELIMITER ;
  
-call sp_ListarTicketSoporte();
  
 DELIMITER $$
-create procedure sp_EditarTicketSoporte(ticId int, des varchar(250), est varchar(30), cliId int)
+create procedure sp_EditarTicketSoporte(ticId int, des varchar(250), est varchar(30), cliId int, facId int)
 	begin
 		update TicketSoporte
 			set descripcionTicket = des,
 				estatus = est,
-                clienteId = cliId
+                clienteId = cliId,
+                facturaId = facId
                 where ticId = ticketSoporteId;
     end $$
 DELIMITER ;
  
-call sp_EditarTicketSoporte(1, 'ppp', 'reciente',1);
  
 DELIMITER $$
 create procedure sp_EliminarTicketSoporte(ticId int)
@@ -553,7 +554,6 @@ create procedure sp_EliminarTicketSoporte(ticId int)
     end $$
 DELIMITER ;
  
-call sp_EliminarTicketSoporte(2);
  
 DELIMITER $$
 create procedure sp_BuscarTicketSoporte(ticId int)
