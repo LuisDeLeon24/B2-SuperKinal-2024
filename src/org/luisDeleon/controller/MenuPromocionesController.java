@@ -182,8 +182,8 @@ public class MenuPromocionesController implements Initializable {
                 double precioVentaMayor = resultSet.getDouble("precioVentaMayor");
                 double precioCompra = resultSet.getDouble("precioCompra");
                 byte[] imagenProducto = resultSet.getBytes("imagenProducto");
-                String distribuidor = resultSet.getString("Distribuidores");
-                String categoriaProductos = resultSet.getString("Categoria");
+                String distribuidor = resultSet.getString("distribuidorId");
+                String categoriaProductos = resultSet.getString("categoriaProductosId");
                 productos.add(new Producto(productoId,nombreProducto,descripcionProducto,cantidadStock,precioVentaUnitario,precioVentaMayor,precioCompra,imagenProducto,distribuidor,categoriaProductos));
             }
         }catch(SQLException e){

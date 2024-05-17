@@ -572,4 +572,57 @@ create procedure sp_verificarPromocion()
             where ticId = ticketSoporteId;
     end $$
 DELIMITER ;
+
+-- Agregar
+delimiter $$
+create procedure sp_agregarPromociones(in prePro decimal(10, 2), in descPro varchar(100), in feIni date, in feFina date, in proId int)
+	begin
+		insert into Promociones (precioPromocion, descripcionPromocion, fechaInicio, fechaFinalizacion, productoId) values
+			(prePro, descPro, feIni, feFina, proId);
+    end $$
+delimiter ;
  
+ 
+-- listar
+delimiter $$
+create procedure sp_listarPromociones()
+	begin
+		select * from Promociones;
+    end $$
+delimiter ;
+ 
+ 
+-- buscar
+delimiter $$
+create procedure sp_buscarPromociones(in promoId int)
+	begin
+		select * from Promociones
+			where promocionId = promoId;
+    end $$
+delimiter ;
+ 
+ 
+-- eliminar
+delimiter $$
+create procedure sp_eliminarPromociones(in promoId int)
+	begin
+		delete 
+			from Promociones
+				where promocionId = promoId;
+    end $$
+delimiter ;
+ 
+-- editar
+delimiter $$
+create procedure sp_editarPromociones(in promoId int, in prePro decimal(10, 2), in descPro varchar(100), in feIni date, in feFina date, in proId int)
+	begin
+		update Promociones
+			set 
+            precioPromocion = prePro,
+            descripcionPromocion = descPro,
+            fechaInicio = feIni,
+            fechaFinalizacion = feFina,
+            productoId = proId
+            where promocionId = promoId;
+    end $$
+delimiter ;
