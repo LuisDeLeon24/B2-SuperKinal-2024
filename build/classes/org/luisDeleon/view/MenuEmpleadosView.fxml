@@ -18,15 +18,15 @@
          </image>
       </ImageView>
       <TextField fx:id="tfEmpleadoId" layoutX="65.0" layoutY="199.0" prefHeight="54.0" prefWidth="204.0" />
-      <TextField fx:id="tfNombre" layoutX="363.0" layoutY="199.0" prefHeight="54.0" prefWidth="204.0" />
+      <TextField fx:id="tfNombre" layoutX="363.0" layoutY="199.0" prefHeight="34.0" prefWidth="204.0" promptText="Nombre" />
       <TextField fx:id="tfSueldo" layoutX="612.0" layoutY="199.0" prefHeight="54.0" prefWidth="204.0" />
       <TextField fx:id="tfEntrada" layoutX="962.0" layoutY="498.0" prefHeight="54.0" prefWidth="204.0" />
       <TextField fx:id="tfSalida" layoutX="962.0" layoutY="606.0" prefHeight="54.0" prefWidth="204.0" />
-      <TableView fx:id="tblEmpleados" layoutX="38.0" layoutY="304.0" prefHeight="459.0" prefWidth="866.0">
+      <TableView fx:id="tblEmpleados" layoutX="38.0" layoutY="304.0" onMouseClicked="#cargarDatosEditar" prefHeight="459.0" prefWidth="866.0">
         <columns>
           <TableColumn fx:id="colEmpleadoId" prefWidth="53.0" text="ID" />
           <TableColumn fx:id="colNombre" prefWidth="134.0" text="Nombre" />
-            <TableColumn prefWidth="84.0" text="Apellido" />
+            <TableColumn fx:id="colApellido" prefWidth="84.0" text="Apellido" />
             <TableColumn fx:id="colSueldo" minWidth="0.0" prefWidth="75.0" text="Sueldo" />
             <TableColumn fx:id="colEntrada" prefWidth="93.0" text="Entrada" />
             <TableColumn fx:id="colSalida" prefWidth="98.0" text="Salida" />
@@ -36,17 +36,23 @@
             <TableColumn fx:id="colApellido" prefWidth="75.0" text="Apellido" />
         </columns>
       </TableView>
-      <Button fx:id="btnRegresar" layoutX="920.0" layoutY="678.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="127.0" style="-fx-background-color: #E1D2A9;" text="Regresar">
+      <Button fx:id="btnRegresar" layoutX="920.0" layoutY="678.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="73.0" prefWidth="127.0" style="-fx-background-color: #E1D2A9;" text="Regresar">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Button fx:id="btnGuardar" layoutX="1058.0" layoutY="678.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="127.0" style="-fx-background-color: #E1D2A9;" text="Guardar">
+      <Button fx:id="btnGuardar" layoutX="1058.0" layoutY="678.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="73.0" prefWidth="127.0" style="-fx-background-color: #E1D2A9;" text="Guardar">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
       <ComboBox fx:id="cmbCargo" layoutX="956.0" layoutY="292.0" prefHeight="54.0" prefWidth="204.0" />
       <ComboBox fx:id="cmbEncargado" layoutX="956.0" layoutY="400.0" prefHeight="54.0" prefWidth="204.0" />
+      <Button fx:id="btnVaciar" layoutX="840.0" layoutY="196.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="74.0" prefWidth="108.0" style="-fx-background-color: #E1D2A9;" text="Vaciar">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <TextField fx:id="tfApellido" layoutX="363.0" layoutY="236.0" prefHeight="34.0" prefWidth="204.0" promptText="Apellido" />
    </children>
 </AnchorPane>

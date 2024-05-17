@@ -72,7 +72,7 @@ public class FormCategoriaProductosController implements Initializable {
                 }
             }else if(op == 2){
                 if(!tfNombreCategoria.getText().equals("") && !tfDescripcionCategoria.getText().equals("")){
-                    if(SuperKinalAlert.getIsntance().mostrarAlertaConfirmacion(106).get() == ButtonType.OK){
+                    if(SuperKinalAlert.getIsntance().mostrarAlertaConfirmacion(406).get() == ButtonType.OK){
                         editarCategoriaProducto();
                         CategoriaProductoDTO.getCategoriaProductoDTO().setCategoriaProducto(null);
                         stage.menuCategoriaProductosView();
@@ -120,7 +120,7 @@ public class FormCategoriaProductosController implements Initializable {
     public void editarCategoriaProducto(){
         try{
             conexion = Conexion.getInstance().obtenerConexion();
-            String sql = "call sp_editarCategoriaProducto(?,?, ?)";
+            String sql = "call sp_editarCategoriaProductos(?,?, ?)";
             statement = conexion.prepareStatement(sql);
             statement.setInt(1, Integer.parseInt(tfCategoriaProductoId.getText()));
             statement.setString(2, tfNombreCategoria.getText());

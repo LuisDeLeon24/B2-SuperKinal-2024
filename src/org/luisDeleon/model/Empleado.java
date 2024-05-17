@@ -22,7 +22,7 @@ public class Empleado {
     private double sueldo;
     private Time horaEntrada;
     private Time horaSalida;
-    private String cargo; //Almacena la concatenacion en MySql
+    private String cargo; 
     private String encargado;
     private int cargoId;//Almacena el verdadero ID
     private int encargadoId;

@@ -247,7 +247,7 @@ delimiter ;
 DELIMITER $$
 	create procedure sp_agregarCategoriaProducto(nomCat varchar(30), desCat varchar(100))
     begin
-		insert into CategoriaProductos(nombreCategoria, descripccionCategoria) values
+		insert into CategoriaProductos(nombreCategoria, descripcionCategoria) values
 			(nomCat, desCat);
     end $$
 DELIMITER ;
@@ -265,7 +265,7 @@ delimiter $$
 create procedure sp_eliminarCategoriaProducto(catId int)
 	begin
 		delete from CategoriaProductos
-		where categoriaProductoId = catId;
+		where categoriaProductosId = catId;
     end $$
 delimiter ;
  
@@ -274,7 +274,7 @@ delimiter $$
 create procedure sp_buscarCategoriaProducto(catId int)
 	begin 
 		select *from CategoriaProductos
-        where categoriaProductoId = catId;
+        where categoriaProductosId = catId;
     end $$
 delimiter ;
  
@@ -285,7 +285,7 @@ create procedure sp_editarCategoriaProductos(catId int,nomCat varchar(30), desCa
         update CategoriaProductos
 			set
             nombreCategoria = nomCat,
-            descripccionCategoria = desCat
+            descripcionCategoria = desCat
             where categoriaProductoId = catId;			
     end $$
 delimiter ;
@@ -456,10 +456,7 @@ call  sp_AgregarEmpleado('Luis', 'De Leon', 2.5, '10:10:10', '10:10:10', 1);
 DELIMITER $$
 create procedure sp_ListarEmpleados()
 	begin 
-        select e.empleadoId, e.nombreEmpleado, e.apellidoEmpleado, e.sueldo, e.horaEntrada, e.horaSalida, e.encargadoId,
-        CONCAT('ID: ', e.cargoId, ' | ', 'Cargo: ', c.nombreCargo, ' | ', 'Descripcion: ', c.descripcionCargo) as 'Cargo'
-		from Empleados e
-		join Cargos c ON e.cargoId = c.cargoId;
+        select *from Empleados;
     end $$
 DELIMITER ;
 call sp_ListarEmpleados();
