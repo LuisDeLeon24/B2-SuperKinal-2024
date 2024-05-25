@@ -129,6 +129,25 @@ create table DetalleFactura(
     constraint FK_DetalleFacturas_Productos foreign key (productoId) references Productos(productoId)
 );
 
+create table NivelesAcceso(
+	nivelAccesoId int not null auto_increment,
+    nivelAcceso varchar(40) not null,
+    primary key PK_nivelAccesoId(nivelAccesoId)
+);
+
+create table Usuarios(
+	usuarioId int not null auto_increment,
+    usuario varchar(30) not null,
+    contrasenia varchar(100) not null,
+    nivelAccesoId int not null,
+    empleadoId int not null,
+    primary key PK_usuarioId(usuarioId),
+    constraint FK_Usuarios_NivelesAcceso foreign key(nivelAccesoId)
+		references NivelesAcceso(nivelAccesoId),
+	constraint FK_Usuarios_Empleados foreign key(empleadoId)
+		references Empleados(empleadoId)
+);
+
 INSERT INTO Clientes (nombre, apellido, telefono, direccion, nit) VALUES 
 ('Juan', 'Perez', '123456789', 'Calle 123, Ciudad', 'NIT123'),
 ('Maria', 'Lopez', '987654321', 'Avenida 456, Pueblo', 'NIT456'),
@@ -208,7 +227,11 @@ INSERT INTO DetalleFactura (facturaId, productoId) VALUES
 (10, 3),
 (11, 4);
 
-
+INSERT INTO NivelesAcceso (nivelAcceso) VALUES
+    ('Administrador'),
+    ('Usuario'),
+    ('Invitado'),
+    ('Moderador');
 
 
 

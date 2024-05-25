@@ -626,3 +626,23 @@ create procedure sp_editarPromociones(in promoId int, in prePro decimal(10, 2), 
             where promocionId = promoId;
     end $$
 delimiter ;
+
+delimiter $$
+	create procedure sp_AgregarUsuario(us varchar(30), con varchar(100), naId int,empId int)
+    begin
+		insert into Usuarios(usuario,contrasenia,nivelAccesoId,EmpleadoId) values
+			(us,con,naId,empId);
+    end $$
+delimiter ;
+
+call sp_agregarUsuario('ldeleon','1234',1,5);
+
+select *from usuarios;
+
+delimiter $$
+	create procedure sp_buscarUsuario(us varchar(30))
+    begin
+		select * from Usuarios
+			where usuario = us;
+    end $$
+delimiter ;

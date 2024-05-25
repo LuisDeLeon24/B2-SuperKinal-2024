@@ -40,6 +40,8 @@ import org.luisDeleon.system.Main;
 public class MenuEmpleadosController implements Initializable {
     private Main stage;
     
+    private int op;
+    
     private static Connection conexion = null;
     private static PreparedStatement statement = null;
     private static ResultSet resultset = null;
@@ -67,15 +69,21 @@ public class MenuEmpleadosController implements Initializable {
     @FXML
     public void handleButtonAction(ActionEvent event){
         if(event.getSource() == btnRegresar){
-            stage.menuPrinciapalView();
+            if(op == 3){   
+                stage.formUsuarioView();
+            }else {
+                stage.menuPrinciapalView();
+            }
         }else if(event.getSource() == btnGuardar){
             if(tfEmpleadoId.getText().equals("")){
-                agregarEmpleado();
-                cargarDatos();
-            }else{
-                editarEmpleado();
-                cargarDatos();
-            }
+                    agregarEmpleado();
+                    cargarDatos();
+                }else{
+                    editarEmpleado();
+                    cargarDatos();
+                }
+            
+            
         }else if(event.getSource() == btnVaciar){
             vaciarCampos();
         }
@@ -307,6 +315,10 @@ public class MenuEmpleadosController implements Initializable {
 
     public void setStage(Main stage) {
         this.stage = stage;
+    }
+
+    public void setOp(int op) {
+        this.op = op;
     }
     
     

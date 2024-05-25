@@ -8,21 +8,20 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="500.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="org.luisDeleon.controller.LoginController">
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.luisDeleon.controller.LoginController">
    <children>
       <ImageView fitHeight="602.0" fitWidth="500.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../image/Login.png" />
          </image>
       </ImageView>
-      <PasswordField layoutX="55.0" layoutY="325.0" prefHeight="49.0" prefWidth="355.0" />
-      <TextField layoutX="55.0" layoutY="212.0" prefHeight="49.0" prefWidth="355.0" />
-      <Button layoutX="176.0" layoutY="403.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="118.0" text="Iniciar">
+      <PasswordField fx:id="tfPasword" layoutX="55.0" layoutY="325.0" prefHeight="49.0" prefWidth="355.0" promptText="Contraseña" />
+      <TextField fx:id="tfUser" layoutX="55.0" layoutY="212.0" prefHeight="49.0" prefWidth="355.0" promptText="Usuario" />
+      <Button fx:id="btnIniciar" layoutX="176.0" layoutY="403.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="49.0" prefWidth="118.0" text="Iniciar">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Button layoutX="176.0" layoutY="471.0" mnemonicParsing="false" opacity="0.76" prefHeight="49.0" prefWidth="118.0" text="Agregar usuario" />
+      <Button fx:id="btnAgregar" disable="true" layoutX="176.0" layoutY="471.0" mnemonicParsing="false" onAction="#handleButtonAction" opacity="0.76" prefHeight="49.0" prefWidth="118.0" text="Agregar usuario" />
    </children>
 </AnchorPane>

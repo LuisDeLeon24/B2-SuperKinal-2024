@@ -16,6 +16,7 @@ import javafx.stage.Stage;
 import org.luisDeleon.controller.FormCategoriaProductosController;
 import org.luisDeleon.controller.FormDistribuidoresController;
 import org.luisDeleon.controller.FormProductosController;
+import org.luisDeleon.controller.FormUsuarioController;
 import org.luisDeleon.controller.FormularioCargosController;
 import org.luisDeleon.controller.FormularioController;
 import org.luisDeleon.controller.LoginController;
@@ -43,7 +44,7 @@ public class Main extends Application {
     public void start(Stage stage) throws Exception {
         this.stage = stage;
         stage.setTitle("SuperKinal APP");
-        menuPrinciapalView();
+        loginView();
         stage.show();
     }
     
@@ -139,9 +140,10 @@ public class Main extends Application {
         }
     }
     
-    public void MenuEmpleados(){
+    public void MenuEmpleados(int op){
        try{
             MenuEmpleadosController menuEmpleadosView = (MenuEmpleadosController)switchScene("MenuEmpleadosView.fxml",1200,800);
+            menuEmpleadosView.setOp(op);
             menuEmpleadosView.setStage(this);
         }catch(Exception e){
             System.out.println(e.getMessage());
@@ -229,4 +231,15 @@ public class Main extends Application {
             e.printStackTrace();
         }
     }
+    
+    public void formUsuarioView(){
+        try{
+            FormUsuarioController formUsuarioView = (FormUsuarioController)switchScene("FormUsuarioView.fxml" , 500, 600);
+            formUsuarioView.setStage(this);
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+            e.printStackTrace();
+        }
+    }
+    
 }
