@@ -359,9 +359,18 @@ DELIMITER ;
 DELIMITER $$
 create procedure sp_ListarFacturas()
 begin
-select * from Facturas;
+select F.facturaId, F.fecha, F.hora, F.total,
+		concat('ID ',Clientes.clienteId,' | ',Clientes.nombre,' ',Clientes.apellido)as 'nombre',
+		CONCAT('ID ',Empleados.empleadoId,' | ',Empleados.nombreEmpleado,' ',apellidoEmpleado) as 'nombreEmpleado'
+		from Facturas F
+join Clientes on F.clienteId = Clientes.clienteId
+join Empleados on F.empleadoId = Empleados.empleadoId;
 end $$
 DELIMITER ;
+
+select *from Empleados;
+
+call sp_ListarFacturas();
  
 -- Eliminar
 DELIMITER $$
@@ -646,3 +655,13 @@ delimiter $$
 			where usuario = us;
     end $$
 delimiter ;
+
+delimiter $$
+	create procedure sp_listarNivelAcceso()
+    begin
+		select * from nivelesAcceso;
+    end $$
+delimiter ;
+
+call sp_listarNivelAcceso();
+

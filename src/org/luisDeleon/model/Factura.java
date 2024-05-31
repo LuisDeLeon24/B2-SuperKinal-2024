@@ -18,6 +18,8 @@ public class Factura {
     private Time hora;
     private int clienteId;
     private int empleadoId;
+    private String cliente;
+    private String empleado;
     private double total;
     
 
@@ -40,6 +42,20 @@ public class Factura {
         this.clienteId = clienteId;
         this.empleadoId = empleadoId;
     }
+
+
+    public Factura(int facturaId, Date fecha, Time hora, String cliente, String empleado, double total) {
+        this.facturaId = facturaId;
+        this.fecha = fecha;
+        this.hora = hora;
+        this.cliente = cliente;
+        this.empleado = empleado;
+        this.total = total;
+    }
+    
+    
+    
+    
 
     public int getFacturaId() {
         return facturaId;
@@ -87,6 +103,22 @@ public class Factura {
 
     public void setTotal(double total) {
         this.total = total;
+    }
+
+    public String getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(String cliente) {
+        this.cliente = cliente;
+    }
+
+    public String getEmpleado() {
+        return empleado;
+    }
+
+    public void setEmpleado(String empleado) {
+        this.empleado = empleado;
     }
 
     

@@ -28,6 +28,7 @@ import org.luisDeleon.controller.MenuEmpleadosController;
 import org.luisDeleon.controller.MenuPrincipalController;
 import org.luisDeleon.controller.MenuTicketSoporteController;
 import org.luisDeleon.controller.MenuDistribuidoresController;
+import org.luisDeleon.controller.MenuFacturasController;
 import org.luisDeleon.controller.MenuProductosController;
 import org.luisDeleon.controller.MenuPromocionesController;
 
@@ -44,7 +45,8 @@ public class Main extends Application {
     public void start(Stage stage) throws Exception {
         this.stage = stage;
         stage.setTitle("SuperKinal APP");
-        loginView();
+        menuPrinciapalView();
+        //loginView();
         stage.show();
     }
     
@@ -236,6 +238,16 @@ public class Main extends Application {
         try{
             FormUsuarioController formUsuarioView = (FormUsuarioController)switchScene("FormUsuarioView.fxml" , 500, 600);
             formUsuarioView.setStage(this);
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+            e.printStackTrace();
+        }
+    }
+    
+    public void menuFacturasView(){
+        try{
+            MenuFacturasController menuFacturasView = (MenuFacturasController)switchScene("MenuFacturasView.fxml" , 1200, 700);
+            menuFacturasView.setStage(this);
         }catch(Exception e){
             System.out.println(e.getMessage());
             e.printStackTrace();
