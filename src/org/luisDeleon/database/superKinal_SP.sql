@@ -88,6 +88,8 @@ create procedure sp_buscarDetalleCompra(in detCId int)
     END $$
 DELIMITER ;
 
+call sp_buscarDetalleCompra(1);
+
 DELIMITER $$
 create procedure sp_editarDetalleCompra(dtId int,cantC int, proId int,comId int)
 	BEGIN
