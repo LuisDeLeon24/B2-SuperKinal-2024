@@ -13,9 +13,9 @@ import javafx.fxml.JavaFXBuilderFactory;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import org.luisDeleon.controller.DetalleFacturasController;
 import org.luisDeleon.controller.FormCategoriaProductosController;
 import org.luisDeleon.controller.FormDistribuidoresController;
-import org.luisDeleon.controller.FormProductosController;
 import org.luisDeleon.controller.FormUsuarioController;
 import org.luisDeleon.controller.FormularioCargosController;
 import org.luisDeleon.controller.FormularioController;
@@ -203,17 +203,6 @@ public class Main extends Application {
         }
     }
     
-    public void formProductoView(int op){
-        try{
-            FormProductosController formProductoView = (FormProductosController)switchScene("FormProductosView.fxml", 900, 700);
-            formProductoView.setOp(op);
-            formProductoView.setStage(this);
-        }catch(Exception e){
-            System.out.println(e.getMessage());
-            e.printStackTrace();
-        }
-    }
-    
     public void menuPromocionView(){
         try{
             MenuPromocionesController menuPromocionesView = (MenuPromocionesController)switchScene("MenuPromocionesView.fxml" , 1000, 600);
@@ -254,4 +243,13 @@ public class Main extends Application {
         }
     }
     
+    public void DetalleFacturasView(){
+        try{
+            DetalleFacturasController detalleFacturasView = (DetalleFacturasController)switchScene("DetalleFacturasView.fxml" , 600, 400);
+            detalleFacturasView.setStage(this);
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+            e.printStackTrace();
+        }
+    }
 }

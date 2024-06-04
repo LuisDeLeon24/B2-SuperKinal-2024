@@ -2,10 +2,14 @@ use superKinal;
 
 -- Compras
 DELIMITER $$
-	create procedure sp_AgregarCompra(fec date, tot decimal(10,2))
-    begin
-		insert into Clientes(fechaCompra.totalCompra) values
-			(fec,tot);
+create procedure sp_agregarCompra(in fecCom date, in can int, in proId int)
+	begin 
+		declare nuevaCompraId int;
+		insert into Compras (fechaCompra) values
+			(fecCom);
+            
+		set nuevaCompraId = last_insert_id();
+        call sp_agregarDetalleCompra(can,proId,nuevaCompraId);
     end $$
 DELIMITER ;
 
@@ -55,10 +59,15 @@ DELIMITER $$
 DELIMITER ;
 
 DELIMITER $$
-	create procedure sp_ListarDetalleCompra()
-    begin
-		select* from DetalleCompra;
-    end$$
+create procedure sp_ListarDetalleCompra()
+    begin 
+		select C.compraId, C.fechaCompra, DE.cantidadCompra,
+		concat(P.nombreProducto, ' | ', P.precioCompra) as 'producto',
+        C.totalCompra from DetalleCompra DE
+        join Compras C on C.compraId = DE.compraId
+        left join Productos P on P.productoId = DE.productoId;
+        
+    end $$
 DELIMITER ;
 
 DELIMITER $$
@@ -70,12 +79,13 @@ DELIMITER $$
 DELIMITER ;
 
 DELIMITER $$
-create procedure sp_buscarDetalleCompra(dtId int)
+create procedure sp_buscarDetalleCompra(in detCId int)
 	BEGIN
-		select * 
-			from DetalleCompra 
-            where detalleCompraId = dtId;
-	END $$
+		select CO.compraId, CO.fechaCompra,CO.totalCompra, DE.cantidadCompra, 
+        DE.productoId as 'Producto' from DetalleCompra DE
+        join Compras CO on DE.compraId = CO.compraId
+		where CO.compraId = detCId;
+    END $$
 DELIMITER ;
 
 DELIMITER $$
@@ -347,11 +357,16 @@ DELIMITER ;
 -- ----------- Facturas ----------------------
 -- Agregar
 DELIMITER $$
-create procedure sp_AgregarFactura(fech date, hor time, cliId int(11), empId int(11), tot decimal(10,2))
-begin
-insert into Facturas(fecha,hora,clienteId,empleadoId,total)values
-(fech,hor,cliId,empId,tot);
-end $$
+create procedure sp_agregarFacturas(in cliId int, in empId int, in proId int)
+	begin
+		declare nuevaFacturaId int;
+        
+		insert into Facturas (fecha, hora, total, clienteId, empleadoId) values
+			(current_date(), now(), 0.0, cliId, empId);
+            
+            set nuevaFacturaId = last_insert_id();
+             call sp_agregarDetalleFactura(nuevaFacturaId,proId);
+    end $$
 DELIMITER ;
 
 
@@ -360,7 +375,7 @@ DELIMITER $$
 create procedure sp_ListarFacturas()
 begin
 select F.facturaId, F.fecha, F.hora, F.total,
-		concat('ID ',Clientes.clienteId,' | ',Clientes.nombre,' ',Clientes.apellido)as 'nombre',
+		concat('ID ',Clientes.clienteId,' | ',Clientes.nombre,' ',Clientes.apellido)as 'nombreCliente',
 		CONCAT('ID ',Empleados.empleadoId,' | ',Empleados.nombreEmpleado,' ',apellidoEmpleado) as 'nombreEmpleado'
 		from Facturas F
 join Clientes on F.clienteId = Clientes.clienteId
@@ -384,10 +399,18 @@ DELIMITER ;
 DELIMITER $$
 create procedure sp_BuscarFactura(facId int)
 begin
-select * from Facturas where facturaId = facId;
+select F.facturaId, F.fecha, F.hora, F.total,
+		concat('ID ',Clientes.clienteId,' | ',Clientes.nombre,' ',Clientes.apellido)as 'nombreCliente',
+		CONCAT('ID ',Empleados.empleadoId,' | ',Empleados.nombreEmpleado,' ',apellidoEmpleado) as 'nombreEmpleado'
+		from Facturas F
+join Clientes on F.clienteId = Clientes.clienteId
+join Empleados on F.empleadoId = Empleados.empleadoId
+where facId = F.facturaId;
  
 end $$
 DELIMITER ;
+
+
  
 -- Editar
 DELIMITER $$
@@ -418,9 +441,15 @@ DELIMITER ;
 DELIMITER $$
 create procedure sp_ListarDetalleFactura()
 begin
-select * from DetalleFactura;
+	select DT.facturaId, P.nombreProducto, CONCAT('ID ',C.clienteid,' | ',C.nombre, ' ', C.apellido) As 'cliente', F.fecha from DetalleFactura DT
+    join Facturas F on DT.facturaId = F.facturaId
+    join Productos P on DT.productoId = P.productoId
+    join Clientes C on F.clienteId = C.clienteid
+    order by DT.facturaId;
 end $$
 DELIMITER ;
+ 
+call  sp_ListarDetalleFactura();
  
 -- Eliminar
 DELIMITER $$

@@ -73,6 +73,8 @@ create table Facturas(
     constraint FK_Facturas_Empleados foreign key (empleadoId) references Empleados(empleadoId)
 );
 
+
+
 create table TicketSoporte(
 	ticketSoporteId int not null auto_increment,
     descripcionTicket varchar(250) not null,

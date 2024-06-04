@@ -5,38 +5,35 @@
  */
 package org.luisDeleon.model;
 
+import java.sql.Date;
+
 /**
  *
  * @author informatica
  */
 public class DetalleFactura {
-   private int detalleFacturaid;
-   private int facturaId;
+   private int factura;
+   private String producto;
+   private String cliente;
+   private Date fecha;
    private int productoId;
 
     public DetalleFactura() {
     }
 
-    public DetalleFactura(int detalleFacturaid, int facturaId, int productoId) {
-        this.detalleFacturaid = detalleFacturaid;
-        this.facturaId = facturaId;
+    public DetalleFactura(int factura, String producto, String cliente, Date fecha) {
+        this.factura = factura;
+        this.producto = producto;
+        this.cliente = cliente;
+        this.fecha = fecha;
+    }
+
+    public DetalleFactura(int factura, String producto, String cliente, Date fecha, int productoId) {
+        this.factura = factura;
+        this.producto = producto;
+        this.cliente = cliente;
+        this.fecha = fecha;
         this.productoId = productoId;
-    }
-
-    public int getDetalleFacturaid() {
-        return detalleFacturaid;
-    }
-
-    public void setDetalleFacturaid(int detalleFacturaid) {
-        this.detalleFacturaid = detalleFacturaid;
-    }
-
-    public int getFacturaId() {
-        return facturaId;
-    }
-
-    public void setFacturaId(int facturaId) {
-        this.facturaId = facturaId;
     }
 
     public int getProductoId() {
@@ -46,11 +43,48 @@ public class DetalleFactura {
     public void setProductoId(int productoId) {
         this.productoId = productoId;
     }
+    
+    
 
-    @Override
-    public String toString() {
-        return "DetalleFactura{" + "detalleFacturaid=" + detalleFacturaid + ", facturaId=" + facturaId + ", productoId=" + productoId + '}';
+    public void setFactura(int factura) {
+        this.factura = factura;
     }
+
+    public void setProducto(String producto) {
+        this.producto = producto;
+    }
+
+    public int getFactura() {
+        return factura;
+    }
+
+    public String getProducto() {
+        return producto;
+    }
+
+    public String getCliente() {
+        return cliente;
+    }
+
+    public Date getFecha() {
+        return fecha;
+    }
+
+    public void setCliente(String cliente) {
+        this.cliente = cliente;
+    }
+
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
+    }
+
+    
+
+    
+
    
+    
+    
+
    
 }

@@ -5,25 +5,53 @@
  */
 package org.luisDeleon.model;
 
+import java.sql.Date;
+
 /**
  *
- * @author informatica
+ * @author robin
  */
-public class DetalleCompra {
+public class DetalleCompra extends Compra{
     private int detalleCompraId;
     private int cantidadCompra;
     private int productoId;
-    private int compraId;
+    private String producto;
+    private int compraid;
+    private String compra;
 
     public DetalleCompra() {
     }
 
-    public DetalleCompra(int detalleCompraId, int cantidadCompra, int productoId, int compraId) {
+    public DetalleCompra(int detalleCompraId, int cantidadCompra, int productoId, int compraid, int compraId,  Date fechaCompra, double totalCompra) {
+        super(compraId, fechaCompra, totalCompra);
         this.detalleCompraId = detalleCompraId;
         this.cantidadCompra = cantidadCompra;
         this.productoId = productoId;
-        this.compraId = compraId;
+        this.compraid = compraid;
     }
+
+    public DetalleCompra(int detalleCompraId, int cantidadCompra, String producto, String compra, int compraId, Date fechaCompra, double totalCompra) {
+        super(compraId, fechaCompra, totalCompra);
+        this.detalleCompraId = detalleCompraId;
+        this.cantidadCompra = cantidadCompra;
+        this.producto = producto;
+        this.compra = compra;
+    }
+
+    public DetalleCompra(int cantidadCompra, String producto, int compraId, Date fechaCompra, double totalCompra) {
+        super(compraId, fechaCompra, totalCompra);
+        this.cantidadCompra = cantidadCompra;
+        this.producto = producto;
+    }
+
+    public DetalleCompra(int cantidad, String producto, int compraId, String fecha, double total) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public DetalleCompra(int compraId, String fecha, double total, int cantidad, String producto) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
 
     public int getDetalleCompraId() {
         return detalleCompraId;
@@ -49,18 +77,33 @@ public class DetalleCompra {
         this.productoId = productoId;
     }
 
-    public int getCompraId() {
-        return compraId;
+    public String getProducto() {
+        return producto;
     }
 
-    public void setCompraId(int compraId) {
-        this.compraId = compraId;
+    public void setProducto(String producto) {
+        this.producto = producto;
+    }
+
+    public int getCompraid() {
+        return compraid;
+    }
+
+    public void setCompraid(int compraid) {
+        this.compraid = compraid;
+    }
+
+    public String getCompra() {
+        return compra;
+    }
+
+    public void setCompra(String compra) {
+        this.compra = compra;
     }
 
     @Override
     public String toString() {
-        return "DetalleCompra{" + "detalleCompraId=" + detalleCompraId + ", cantidadCompra=" + cantidadCompra + ", productoId=" + productoId + ", compraId=" + compraId + '}';
+        return "ID " + detalleCompraId + " | " + cantidadCompra ;
     }
-    
     
 }
