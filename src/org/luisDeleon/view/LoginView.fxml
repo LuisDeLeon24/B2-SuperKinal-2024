@@ -15,13 +15,13 @@
             <Image url="@../image/Login.png" />
          </image>
       </ImageView>
-      <PasswordField fx:id="tfPasword" layoutX="55.0" layoutY="325.0" prefHeight="49.0" prefWidth="355.0" promptText="Contraseña" />
+      <PasswordField fx:id="tfPasword" layoutX="55.0" layoutY="337.0" prefHeight="49.0" prefWidth="355.0" promptText="Contraseña" />
       <TextField fx:id="tfUser" layoutX="55.0" layoutY="212.0" prefHeight="49.0" prefWidth="355.0" promptText="Usuario" />
-      <Button fx:id="btnIniciar" layoutX="176.0" layoutY="403.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="49.0" prefWidth="118.0" text="Iniciar">
+      <Button fx:id="btnIniciar" layoutX="173.0" layoutY="415.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="49.0" prefWidth="118.0" text="Iniciar">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Button fx:id="btnAgregar" disable="true" layoutX="176.0" layoutY="471.0" mnemonicParsing="false" onAction="#handleButtonAction" opacity="0.76" prefHeight="49.0" prefWidth="118.0" text="Agregar usuario" />
+      <Button fx:id="btnAgregar" disable="true" layoutX="176.0" layoutY="489.0" mnemonicParsing="false" onAction="#handleButtonAction" opacity="0.76" prefHeight="49.0" prefWidth="118.0" text="Agregar usuario" />
    </children>
 </AnchorPane>

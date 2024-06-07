@@ -4,11 +4,14 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/Luis%20De%20León/Desktop/Repositorios/B2-SuperKinal-2024/src/org/luisDeleon/model/Factura.java</file>
-            <file>file:/C:/Users/Luis%20De%20León/Desktop/Repositorios/B2-SuperKinal-2024/src/org/luisDeleon/controller/DetalleFacturasController.java</file>
+            <file>file:/C:/Users/Luis%20De%20León/Desktop/Repositorios/B2-SuperKinal-2024/src/org/luisDeleon/controller/MenuPrincipalController.java</file>
+            <file>file:/C:/Users/Luis%20De%20León/Desktop/Repositorios/B2-SuperKinal-2024/src/org/luisDeleon/controller/MenuComprasController.java</file>
             <file>file:/C:/Users/Luis%20De%20León/Desktop/Repositorios/B2-SuperKinal-2024/src/org/luisDeleon/controller/MenuFacturasController.java</file>
             <file>file:/C:/Users/Luis%20De%20León/Desktop/Repositorios/B2-SuperKinal-2024/src/org/luisDeleon/model/DetalleFactura.java</file>
             <file>file:/C:/Users/Luis%20De%20León/Desktop/Repositorios/B2-SuperKinal-2024/src/org/luisDeleon/system/Main.java</file>
+            <file>file:/C:/Users/Luis%20De%20León/Desktop/Repositorios/B2-SuperKinal-2024/src/org/luisDeleon/model/Compra.java</file>
             <file>file:/C:/Users/Luis%20De%20León/Desktop/Repositorios/B2-SuperKinal-2024/src/org/luisDeleon/dao/Conexion.java</file>
+            <file>file:/C:/Users/Luis%20De%20León/Desktop/Repositorios/B2-SuperKinal-2024/src/org/luisDeleon/model/DetalleCompra.java</file>
         </group>
     </open-files>
 </project-private>
