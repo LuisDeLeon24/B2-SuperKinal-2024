@@ -73,6 +73,8 @@ create table Facturas(
     constraint FK_Facturas_Empleados foreign key (empleadoId) references Empleados(empleadoId)
 );
 
+
+
 create table TicketSoporte(
 	ticketSoporteId int not null auto_increment,
     descripcionTicket varchar(250) not null,
@@ -129,6 +131,28 @@ create table DetalleFactura(
     constraint FK_DetalleFacturas_Productos foreign key (productoId) references Productos(productoId)
 );
 
+<<<<<<< HEAD
+create table NivelesAcceso(
+	nivelAccesoId int not null auto_increment,
+    nivelAcceso varchar(40) not null,
+    primary key PK_nivelAccesoId(nivelAccesoId)
+);
+
+create table Usuarios(
+	usuarioId int not null auto_increment,
+    usuario varchar(30) not null,
+    contrasenia varchar(100) not null,
+    nivelAccesoId int not null,
+    empleadoId int not null,
+    primary key PK_usuarioId(usuarioId),
+    constraint FK_Usuarios_NivelesAcceso foreign key(nivelAccesoId)
+		references NivelesAcceso(nivelAccesoId),
+	constraint FK_Usuarios_Empleados foreign key(empleadoId)
+		references Empleados(empleadoId)
+);
+
+=======
+>>>>>>> e655c3bd9dcb247a2192055c970e37cff7fc78db
 INSERT INTO Clientes (nombre, apellido, telefono, direccion, nit) VALUES 
 ('Juan', 'Perez', '123456789', 'Calle 123, Ciudad', 'NIT123'),
 ('Maria', 'Lopez', '987654321', 'Avenida 456, Pueblo', 'NIT456'),
@@ -173,6 +197,12 @@ INSERT INTO Facturas (fecha, hora, clienteId, empleadoId, total) VALUES
 ('2024-05-08', '14:00:00', 4, 3, 300.25);
 
 INSERT INTO Facturas (fecha, hora, clienteId, empleadoId) VALUES 
+<<<<<<< HEAD
+('2024-05-02', '10:30:00', 10, 1),
+('2024-05-04', '11:45:00', 10, 2),
+('2024-05-06', '09:15:00', 10, 1),
+('2024-05-08', '14:00:00', 10, 4);
+=======
 ('2024-05-02', '10:30:00', 1, 2),
 ('2024-05-04', '11:45:00', 2, 3),
 ('2024-05-06', '09:15:00', 3, 2),
@@ -191,6 +221,7 @@ VALUES
     ('Portal a Otros Mundos', 'Abre puertas a mundos de fantasía y aventuras sin límites.', 170, 17.99, 14.99, 10.99, 1, 1),
     ('Cáliz de Deseos Cumplidos', 'Un cáliz mágico que convierte tus deseos en realidad.', 110, 11.99, 8.99, 6.99, 3, 3);
 
+>>>>>>> e655c3bd9dcb247a2192055c970e37cff7fc78db
 
 INSERT INTO TicketSoporte (descripcionTicket, estatus, clienteId, facturaId) VALUES 
 ('Problema con el producto X', 'Abierto', 1, 10, 1),
@@ -198,10 +229,21 @@ INSERT INTO TicketSoporte (descripcionTicket, estatus, clienteId, facturaId) VAL
 ('Reclamo por factura incorrecta', 'Resuelto', 10, 1),
 ('Solicitud de devolución', 'Abierto', 4, 10, 1);
 
+<<<<<<< HEAD
+INSERT INTO Productos (nombreProducto, descripcionProducto, cantidadStock, precioVentaUnitario, precioVentaMayor, precioCompra, distribuidorId, categoriaProductosId) VALUES 
+('Televisor LED 55"', 'Resolución 4K', 15, 899.99, 850.00, 700.00, 1, 1),
+('Camisa de vestir', 'Talla M, color blanco', 50, 29.99, 25.00, 15.00, 2, 2),
+('Juego de sábanas', 'Para cama matrimonial', 30, 49.99, 45.00, 30.00, 3, 3),
+('Cereal de chocolate', 'Paquete de 500g', 100, 5.99, 5.00, 3.50, 4, 4);
+
+INSERT INTO Promociones (precioPromocion, descripcionPromocion, fechaInicio, fechaFinalizacion, productoId) VALUES 
+(799.99, 'Descuento especial por tiempo limitado', '2024-05-01', '2024-05-15', 1),
+=======
 
 
 INSERT INTO Promociones (precioPromocion, descripcionPromocion, fechaInicio, fechaFinalizacion, productoId) VALUES 
 (799.99, 'Descuento especial por tiempo limitado', '2024-05-01', '2024-05-15', 2),
+>>>>>>> e655c3bd9dcb247a2192055c970e37cff7fc78db
 (19.99, 'Oferta por lanzamiento', '2024-05-05', '2024-05-20', 2),
 (39.99, 'Promoción de temporada', '2024-05-10', '2024-05-25', 3),
 (3.99, 'Oferta por cantidad', '2024-05-03', '2024-05-10', 4);
@@ -218,9 +260,19 @@ INSERT INTO DetalleFactura (facturaId, productoId) VALUES
 (10, 3),
 (11, 4);
 
+<<<<<<< HEAD
+INSERT INTO NivelesAcceso (nivelAcceso) VALUES
+    ('Administrador'),
+    ('Usuario'),
+    ('Invitado'),
+    ('Moderador');
+
+
+=======
 
 
 select *from categoriaProductos;
+>>>>>>> e655c3bd9dcb247a2192055c970e37cff7fc78db
 
 
 

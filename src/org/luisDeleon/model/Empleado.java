@@ -22,7 +22,11 @@ public class Empleado {
     private double sueldo;
     private Time horaEntrada;
     private Time horaSalida;
+<<<<<<< HEAD
+    private String cargo; 
+=======
     private String cargo; //Almacena la concatenacion en MySql
+>>>>>>> e655c3bd9dcb247a2192055c970e37cff7fc78db
     private String encargado;
     private int cargoId;//Almacena el verdadero ID
     private int encargadoId;
@@ -148,7 +152,11 @@ public class Empleado {
  
     @Override
     public String toString() {
+<<<<<<< HEAD
+        return  "ID " + empleadoId + " | " + nombreEmpleado + " | " + apellidoEmpleado;
+=======
         return "Empleado{" + "empleadoId=" + empleadoId + ", nombreEmpleado=" + nombreEmpleado + ", apellidoEmpleado=" + apellidoEmpleado + ", sueldo=" + sueldo + ", horaEntrada=" + horaEntrada + ", horaSalida=" + horaSalida + ", cargoId=" + cargoId + ", encargadoId=" + encargadoId + '}';
+>>>>>>> e655c3bd9dcb247a2192055c970e37cff7fc78db
     }
  
     

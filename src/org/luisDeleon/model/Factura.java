@@ -18,6 +18,11 @@ public class Factura {
     private Time hora;
     private int clienteId;
     private int empleadoId;
+<<<<<<< HEAD
+    private String cliente;
+    private String empleado;
+=======
+>>>>>>> e655c3bd9dcb247a2192055c970e37cff7fc78db
     private double total;
     
 
@@ -41,6 +46,23 @@ public class Factura {
         this.empleadoId = empleadoId;
     }
 
+<<<<<<< HEAD
+
+    public Factura(int facturaId, Date fecha, Time hora, String cliente, String empleado, double total) {
+        this.facturaId = facturaId;
+        this.fecha = fecha;
+        this.hora = hora;
+        this.cliente = cliente;
+        this.empleado = empleado;
+        this.total = total;
+    }
+    
+    
+    
+    
+
+=======
+>>>>>>> e655c3bd9dcb247a2192055c970e37cff7fc78db
     public int getFacturaId() {
         return facturaId;
     }
@@ -89,6 +111,25 @@ public class Factura {
         this.total = total;
     }
 
+<<<<<<< HEAD
+    public String getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(String cliente) {
+        this.cliente = cliente;
+    }
+
+    public String getEmpleado() {
+        return empleado;
+    }
+
+    public void setEmpleado(String empleado) {
+        this.empleado = empleado;
+    }
+
+=======
+>>>>>>> e655c3bd9dcb247a2192055c970e37cff7fc78db
     
     
     

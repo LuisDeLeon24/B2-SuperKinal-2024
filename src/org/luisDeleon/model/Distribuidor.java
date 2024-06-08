@@ -7,7 +7,11 @@ package org.luisDeleon.model;
 
 /**
  *
+<<<<<<< HEAD
+ * @author Luis De León
+=======
  * @author informatica
+>>>>>>> e655c3bd9dcb247a2192055c970e37cff7fc78db
  */
 public class Distribuidor {
     private int distribuidorId;
@@ -29,6 +33,8 @@ public class Distribuidor {
         this.web = web;
     }
 
+<<<<<<< HEAD
+=======
     public Distribuidor(int distribuidorId, String nombreDistribuidor, String direccionDistribuidor, String nitDistribuidor, String telefonoDistribuidor) {
         this.distribuidorId = distribuidorId;
         this.nombreDistribuidor = nombreDistribuidor;
@@ -37,6 +43,7 @@ public class Distribuidor {
         this.telefonoDistribuidor = telefonoDistribuidor;
     }
 
+>>>>>>> e655c3bd9dcb247a2192055c970e37cff7fc78db
     public int getDistribuidorId() {
         return distribuidorId;
     }
@@ -91,4 +98,8 @@ public class Distribuidor {
     }
     
     
+<<<<<<< HEAD
+    
+=======
+>>>>>>> e655c3bd9dcb247a2192055c970e37cff7fc78db
 }

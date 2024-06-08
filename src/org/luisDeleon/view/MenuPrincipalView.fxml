@@ -15,10 +15,17 @@
             <items>
               <MenuItem fx:id="btnMenuClientes" mnemonicParsing="false" onAction="#handleButtonAction" text="Clientes" />
                   <MenuItem fx:id="btnCargos" mnemonicParsing="false" onAction="#handleButtonAction" text="Cargos" />
-                  <MenuItem fx:id="btnTicketSoporte" mnemonicParsing="false" onAction="#handleButtonAction" text="Ticket Soporte" />
                   <MenuItem fx:id="btnCompras" mnemonicParsing="false" onAction="#handleButtonAction" text="Compras" />
+                  <MenuItem fx:id="btnTicketSoporte" mnemonicParsing="false" onAction="#handleButtonAction" text="Ticket Soporte" />
                   <MenuItem fx:id="btnEmpleados" mnemonicParsing="false" onAction="#handleButtonAction" text="Empleados" />
+<<<<<<< HEAD
+                  <MenuItem fx:id="btnCP" mnemonicParsing="false" onAction="#handleButtonAction" text="Categoria Productos" />
+                  <MenuItem fx:id="btnDistribuidores" mnemonicParsing="false" onAction="#handleButtonAction" text="Distribuidores" />
+                  <MenuItem fx:id="btnPromociones" mnemonicParsing="false" onAction="#handleButtonAction" text="Promociones" />
+                  <MenuItem fx:id="btnFacturas" mnemonicParsing="false" onAction="#handleButtonAction" text="Facturas" />
+=======
                   <MenuItem fx:id="btnCatpro" mnemonicParsing="false" onAction="#handleButtonAction" text="Categoria Productos" />
+>>>>>>> e655c3bd9dcb247a2192055c970e37cff7fc78db
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Reportes" />
