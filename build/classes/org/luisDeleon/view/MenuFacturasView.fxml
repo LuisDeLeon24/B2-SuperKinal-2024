@@ -65,11 +65,20 @@
         </columns>
       </TableView>
       <TextField fx:id="tfBuscar" layoutX="494.0" layoutY="79.0" prefHeight="54.0" prefWidth="150.0" promptText="ID para buscar" />
-      <Button fx:id="btnPlus" layoutX="982.0" layoutY="287.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="45.0" prefWidth="52.0" style="-fx-background-color: #E1D2A9;">
+      <Button fx:id="btnPlus" layoutX="991.0" layoutY="287.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="45.0" prefWidth="52.0" style="-fx-background-color: #E1D2A9;">
          <graphic>
             <ImageView fitHeight="45.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../image/plus.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="btnVer" layoutX="1079.0" layoutY="287.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="45.0" prefWidth="52.0" style="-fx-background-color: #E1D2A9;">
+         <graphic>
+            <ImageView fitHeight="45.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/eye.png" />
                </image>
             </ImageView>
          </graphic>

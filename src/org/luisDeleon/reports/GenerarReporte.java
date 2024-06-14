@@ -39,7 +39,7 @@ public class GenerarReporte {
             Map<String, Object> parametros = new HashMap<>();
             parametros.put("facId", facId);
             
-            InputStream jasperPath = GenerarReporte.class.getResourceAsStream("/org/jorgeperalta/report/Factura.jasper");
+            InputStream jasperPath = GenerarReporte.class.getResourceAsStream("/org/luisDeleon/report/Factura.jasper");
             JasperPrint reporte = JasperFillManager.fillReport(jasperPath, parametros, conexion);
             
             Stage reportStage = new Stage();
@@ -70,7 +70,7 @@ public class GenerarReporte {
                 Map<String, Object> parametros = new HashMap<>();
                 parametros.put("cliId", cliId);
             
-                InputStream jasperPath = GenerarReporte.class.getResourceAsStream("/org/jorgeperalta/report/Clientes.jasper");
+                InputStream jasperPath = GenerarReporte.class.getResourceAsStream("/org/luisDeleon/report/Clientes.jasper");
                 JasperPrint reporte = JasperFillManager.fillReport(jasperPath, parametros, conexion);
             
                 Stage reportStage = new Stage();
@@ -101,7 +101,7 @@ public class GenerarReporte {
                 Map<String, Object> parametros = new HashMap<>();
                 parametros.put("proId", proId);
             
-                InputStream jasperPath = GenerarReporte.class.getResourceAsStream("/org/jorgeperalta/report/Producto.jasper");
+                InputStream jasperPath = GenerarReporte.class.getResourceAsStream("/org/luisDeleon/report/Producto.jasper");
                 JasperPrint reporte = JasperFillManager.fillReport(jasperPath, parametros, conexion);
             
                 Stage reportStage = new Stage();

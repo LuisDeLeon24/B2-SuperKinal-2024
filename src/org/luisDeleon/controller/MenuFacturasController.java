@@ -33,6 +33,7 @@ import org.luisDeleon.model.DetalleFactura;
 import org.luisDeleon.model.Empleado;
 import org.luisDeleon.model.Factura;
 import org.luisDeleon.model.Producto;
+import org.luisDeleon.reports.GenerarReporte;
 import org.luisDeleon.system.Main;
 
 /**
@@ -48,7 +49,7 @@ public class MenuFacturasController implements Initializable {
     private static ResultSet resultSet;
     
     @FXML
-    Button btnRegresar,btnEliminar,btnGuardar,btnBuscar,btnVaciar,btnPlus;
+    Button btnRegresar,btnEliminar,btnGuardar,btnBuscar,btnVaciar,btnPlus,btnVer;
     
     @FXML
     TextField tfTotal,tfHora,tfBuscar,tfFactura;
@@ -66,6 +67,8 @@ public class MenuFacturasController implements Initializable {
     public void handleButtonAction(ActionEvent event){
         if (event.getSource() == btnRegresar){
             stage.menuPrinciapalView();
+        }else if(event.getSource() == btnVer){
+            GenerarReporte.getInstance().generarFactura(((Factura)tblFacturas.getSelectionModel().getSelectedItem()).getFacturaId());
         }else if(event.getSource() == btnVaciar){
             vaciarCampos();
         }else if(event.getSource() == btnGuardar){
