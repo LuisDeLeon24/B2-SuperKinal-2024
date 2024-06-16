@@ -68,7 +68,7 @@ public class MenuFacturasController implements Initializable {
         if (event.getSource() == btnRegresar){
             stage.menuPrinciapalView();
         }else if(event.getSource() == btnVer){
-            GenerarReporte.getInstance().generarFactura(((Factura)tblFacturas.getSelectionModel().getSelectedItem()).getFacturaId());
+            GenerarReporte.getInstance().generarFactura(Integer.parseInt(tfFactura.getText()));
         }else if(event.getSource() == btnVaciar){
             vaciarCampos();
         }else if(event.getSource() == btnGuardar){

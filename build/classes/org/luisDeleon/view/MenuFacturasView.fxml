@@ -54,7 +54,7 @@
                </image>
             </ImageView>
          </graphic></Button>
-      <TableView fx:id="tblFacturas" layoutX="73.0" layoutY="298.0" prefHeight="316.0" prefWidth="846.0">
+      <TableView fx:id="tblFacturas" layoutX="73.0" layoutY="298.0" onMouseClicked="#cargarDatosEditar" prefHeight="316.0" prefWidth="846.0">
         <columns>
           <TableColumn fx:id="colFacturaId" prefWidth="70.0" text="ID" />
           <TableColumn fx:id="colFecha" prefWidth="129.0" text="Fecha" />

@@ -122,6 +122,9 @@ public class Factura {
     }
 
     
-    
+    @Override
+    public String toString() {
+        return  "ID " + facturaId + " | " + cliente + " | " + empleado;
+    }
     
 }

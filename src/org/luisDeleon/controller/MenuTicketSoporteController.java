@@ -7,9 +7,11 @@ package org.luisDeleon.controller;
 
 import java.net.URL;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Time;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
@@ -26,6 +28,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import org.luisDeleon.dao.Conexion;
 import org.luisDeleon.model.Cliente;
+import org.luisDeleon.model.Factura;
 import org.luisDeleon.model.TicketSoporte;
 import org.luisDeleon.system.Main;
 
@@ -42,7 +45,7 @@ public class MenuTicketSoporteController implements Initializable {
     private static ResultSet resultSet = null;
     
    @FXML
-    ComboBox cmbEstatus,cmbClientes;
+    ComboBox cmbEstatus,cmbClientes,cmbFactura;
     
      @FXML
      TableColumn colTicketId,colDescripcion,colEstatus,colClienteId,colFactura;
@@ -84,6 +87,7 @@ public class MenuTicketSoporteController implements Initializable {
         taDescripcion.clear();
         cmbEstatus.getSelectionModel().clearSelection();
         cmbClientes.getSelectionModel().clearSelection();
+        cmbFactura.getSelectionModel().clearSelection();
     }
     
     public void cargarDatos(){
@@ -263,10 +267,49 @@ public class MenuTicketSoporteController implements Initializable {
         }
     }
     
+     public ObservableList<Factura> listarFacturas(){
+        ArrayList<Factura> factura = new ArrayList<>();
+        try{
+            conexion = Conexion.getInstance().obtenerConexion();
+            String sql = "call sp_ListarFacturas()";
+            statement = conexion.prepareStatement(sql);
+            resultSet = statement.executeQuery();
+            
+            while(resultSet.next()){
+                int facturaId = resultSet.getInt("facturaId");
+                Date fecha = resultSet.getDate("fecha");
+                Time hora = resultSet.getTime("hora");
+                String clienteN = resultSet.getString("nombreCliente");
+                String empleadoN = resultSet.getString("nombreEmpleado");
+                double total = resultSet.getDouble("total");
+                factura.add(new Factura(facturaId, fecha, hora,clienteN,empleadoN,total));
+            }
+        }catch(SQLException e){
+            System.out.println(e.getMessage());
+        }finally{
+            try{
+                if(resultSet != null){
+                    resultSet.close();
+                }
+                if(statement != null){
+                    statement.close();
+                }
+                if(conexion != null){
+                    conexion.close();
+                }
+            }catch(SQLException e){
+                System.out.println(e.getMessage());
+            }
+        }
+        
+        return FXCollections.observableList(factura);
+    }
+    
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         cargarCmbEstatus();
         cmbClientes.setItems(listarClientes());
+        cmbFactura.setItems(listarFacturas());
         cargarDatos();
     }    
 

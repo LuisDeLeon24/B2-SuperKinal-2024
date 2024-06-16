@@ -34,7 +34,7 @@ public class GenerarReporte {
     
     public void generarFactura(int facId){
         try{
-            
+            Stage reportStage = null;
             conexion = Conexion.getInstance().obtenerConexion();
             Map<String, Object> parametros = new HashMap<>();
             parametros.put("facId", facId);
@@ -42,7 +42,7 @@ public class GenerarReporte {
             InputStream jasperPath = GenerarReporte.class.getResourceAsStream("/org/luisDeleon/report/Factura.jasper");
             JasperPrint reporte = JasperFillManager.fillReport(jasperPath, parametros, conexion);
             
-            Stage reportStage = new Stage();
+            reportStage = new Stage();
             
             JRViewerFX reportViewer = new JRViewerFX(reporte);
             
@@ -59,6 +59,7 @@ public class GenerarReporte {
                     
                     
         }catch(Exception e){
+            System.out.println(e.getMessage());
             e.printStackTrace();
         }
     }

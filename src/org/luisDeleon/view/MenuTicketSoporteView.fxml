@@ -27,15 +27,15 @@
             <TableColumn fx:id="colFactura" prefWidth="112.800048828125" text="FacturaId" />
         </columns>
       </TableView>
-      <TextField fx:id="tfTicketId" editable="false" layoutX="67.0" layoutY="220.0" opacity="0.77" prefHeight="54.0" prefWidth="215.0" promptText="ID Ticket">
+      <TextField fx:id="tfTicketId" editable="false" layoutX="61.0" layoutY="202.0" opacity="0.77" prefHeight="54.0" prefWidth="215.0" promptText="ID Ticket">
          <font>
             <Font size="25.0" />
          </font>
       </TextField>
-      <TextArea fx:id="taDescripcion" layoutX="916.0" layoutY="316.0" opacity="0.74" prefHeight="200.0" prefWidth="243.0" wrapText="true" />
+      <TextArea fx:id="taDescripcion" layoutX="933.0" layoutY="312.0" opacity="0.74" prefHeight="200.0" prefWidth="243.0" wrapText="true" />
       <ComboBox fx:id="cmbClientes" layoutX="361.0" layoutY="206.0" prefHeight="47.0" prefWidth="215.0" />
       <ComboBox fx:id="cmbFactura" layoutX="600.0" layoutY="206.0" prefHeight="47.0" prefWidth="215.0" />
-      <ComboBox fx:id="cmbEstatus" layoutX="890.0" layoutY="586.0" prefHeight="47.0" prefWidth="215.0" />
+      <ComboBox fx:id="cmbEstatus" layoutX="962.0" layoutY="606.0" prefHeight="47.0" prefWidth="215.0" />
       <Button fx:id="btnRegresar" layoutX="881.0" layoutY="679.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="66.0" prefWidth="90.0" style="-fx-background-color: #E1D2A9;" text="Regresar">
          <font>
             <Font size="15.0" />
